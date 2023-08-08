@@ -1,0 +1,57 @@
+/* Estilos para la tabla */
+.table-container {
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+.table-container th,
+.table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-container th {
+    background-color: #c71585;
+    color: #fff;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para los botones en la tabla */
+.table-button {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #884f4f;
+}
+
+.button.editar-btn {
+    background-color: #007bff; /* Azul */
+    margin-right: 5px;
+}
+
+.table-button.editar-btn:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+.table-button.eliminar-btn {
+    background-color: #dc3545; /* Rojo */
+}
+
+.table-button.eliminar-btn:hover {
+    background-color: #b52b38; /* Rojo más oscuro */
+}

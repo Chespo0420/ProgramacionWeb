@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="/Styles/Index.css">
+    <link rel="stylesheet" href="/Styles/Form.css">
+    <link rel="stylesheet" href="/Styles/Modal.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/Pags/Index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/Pags/Listas.html">Listas</a>
+                </li>
+                <li>
+                    <a href="/Pags/Tablas.html">Tablas</a>
+                </li>
+                <li>
+                    <a href="/Pags/Formulario.html">Formulario</a>
+                </li>
+                <li>
+                    <a href="/Pags/ejercicios.html">Ejercicios</a>
+                </li>
+                <li>
+                    <a href="/Pags/EjerciciosJS.html">Ejercicios JS</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Formulario básico</h1>
+    <div class="form-container">
+        <h1>Formulario de contacto</h1>
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero" required>
+                <option value="" disabled selected>--Selecciona--</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <!-- Modal de edición -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Editar formulario</h2>
+            <form id="edit-form">
+                <label for="edit-nombre">Nombre:</label>
+                <input type="text" id="edit-nombre" name="edit-nombre" required>
+
+                <label for="edit-email">Correo electrónico:</label>
+                <input type="email" id="edit-email" name="edit-email" required>
+
+                <label for="edit-edad">Edad:</label>
+                <input type="number" id="edit-edad" name="edit-edad" required>
+
+                <label for="edit-genero">Género:</label>
+                <select id="edit-genero" name="edit-genero" required>
+                    <option value="" disabled selected>--Selecciona--</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="edit-mensaje">Mensaje:</label>
+                <textarea id="edit-mensaje" name="edit-mensaje" rows="4" required></textarea>
+
+                <input type="submit" value="Guardar cambios">
+            </form>
+        </div>
+    </div>
+
+    <script src="/Scripts/Formulario.js"></script>
+</body>
+</html>

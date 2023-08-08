@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIOS JAVASCRIPT</title>
+    <link rel="stylesheet" href="/Styles/Ejercicios.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/Pags/Index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/Pags/Listas.html">Listas</a>
+                </li>
+                <li>
+                    <a href="/Pags/Tablas.html">Tablas</a>
+                </li>
+                <li>
+                    <a href="/Pags/Formulario.html">Formulario</a>
+                </li>
+                <li>
+                    <a href="/Pags/ejercicios.html">Ejercicios</a>
+                </li>
+                <li>
+                    <a href="/Pags/EjerciciosJS.html">Ejercicios JS</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Ejercicio 1 -->
+    <p>/* EJERCICIO 1*/</p>
+    <h1>Consulta sobre el estado del día</h1>
+
+    <p id="resultado1"></p>
+
+    <button onclick="mostrarEstadoDelDia()">Obtener estado del día</button>
+
+    <!-- Ejercicio 2 -->
+    <p>/* EJERCICIO 2 */</p>
+    <h1>Calculadora de área y perímetro de una circunferencia</h1>
+
+    <label for="radio">Ingrese el radio de la circunferencia:</label>
+    <input type="number" id="radio">
+    <button onclick="calcularAreaYPerimetro()">Calcular</button>
+
+    <p>Área: <span id="area"></span></p>
+    <p>Perímetro: <span id="perimetro"></span></p>
+
+    <!-- Ejercicio 3 -->
+    <p>/*EJERCICIO 3 */</p>
+    <h1>Verificación de edad</h1>
+
+    <label for="edad">Ingrese su edad:</label>
+    <input type="number" id="edad">
+    <button onclick="verificarEdad()">Verificar Edad</button>
+
+    <p id="mensajeEdad"></p>
+
+    <!-- Ejercicio 4 -->
+    <p>/*EJERCICIO 4 */</p>
+    <h1>Verificación de caracteres</h1>
+
+    <label for="caracter">Ingrese el caracter 'S' o 'N':</label>
+    <input type="text" id="caracter">
+    <button onclick="verificarCaracter()">Verificar Caracter</button>
+
+    <p id="mensajeCaracter"></p>
+
+    <!-- Ejercicio 5 -->
+    <p>/*EJERCICIO 5*/</p>
+    <h1>Menú de operaciones aritméticas</h1>
+
+    <label for="valor1">Ingrese el primer valor:</label>
+    <input type="number" id="valor1">
+
+    <label for="valor2">Ingrese el segundo valor:</label>
+    <input type="number" id="valor2">
+
+    <label for="operacion">Seleccione la operación: (S)uma, (R)esta, (M)ultiplicación, (D)ivisión:</label>
+    <input type="text" id="operacion" maxlength="1">
+    <button onclick="calcularResultado()">Calcular</button>
+
+    <p id="resultado5"></p>
+
+    <!-- Ejercicio 6 -->
+    <p>/*EJERCICIO 6*/</p>
+    <h1>Verificación de número par o impar</h1>
+
+    <label for="numero">Ingrese un número entero:</label>
+    <input type="number" id="numero">
+    <button onclick="verificarParImpar()">Verificar</button>
+
+    <p id="mensajeParImpar"></p>
+
+    <!-- Ejercicio 7 -->
+    <p>/*EJERCICIO 7*/</p>
+    <h1>Suma hasta superar el límite</h1>
+
+    <label for="limite">Ingrese un valor límite positivo:</label>
+    <input type="number" id="limite">
+    <button onclick="sumaHastaLimite()">Calcular</button>
+
+    <p id="numerosIngresados"></p>
+    <p id="sumaFinal"></p>
+
+    <!-- Ejercicio 8 -->
+    <p>/*EJERCICIO 8*/</p>
+    <h1>Leer números enteros y calcular máximo, mínimo y promedio</h1>
+    <button onclick="leerNumerosYCalcular()">Leer números enteros</button>
+    <p id="maximo"></p>
+    <p id="minimo"></p>
+    <p id="promedio"></p>
+
+    <!-- Ejercicio 9 -->
+    <p>/*EJERCICIO 9*/</p>
+    <h1>Mostrar frase con un espacio entre cada letra</h1>
+    <button onclick="mostrarFraseConEspacios()">Mostrar frase</button>
+    <p id="resultadoFrase"></p>
+
+    <!-- Ejercicio 10 -->
+    <p>/*EJERCICIO 10*/</p>
+    <h1>Palabra al revés</h1>
+    <label for="palabra">Ingrese una palabra:</label>
+    <input type="text" id="palabra">
+    <button onclick="mostrarPalabraAlReves()">Obtener palabra al revés</button>
+    <p id="resultadoPalabra"></p>
+
+    <!-- Ejercicio 11 -->
+    <p>/*EJERCICIO 11*/</p>
+    <h1>Palabra más larga</h1>
+    <label for="texto">Ingrese un texto:</label>
+    <input type="text" id="texto">
+    <button onclick="mostrarPalabraMasLarga()">Obtener palabra más larga</button>
+    <p id="resultadoPalabraMasLarga"></p>
+
+    <!-- Ejercicio 12 -->
+    <p>/*EJERCICIO 12*/</p>
+    <h2>Ejemplos:</h2>
+    <ul>
+        <li>1. Número entero: 42</li>
+        <li>2. Número decimal: 3.14</li>
+        <li>3. String: "Hola, esto es un string"</li>
+        <li>4. Booleano: true</li>
+        <li>5. Array: [1, 2, 3, 4]</li>
+        <li>6. Objeto: {"nombre": "Juan", "edad": 30}</li>
+        <li>7. Valor nulo: null</li>
+        <li>8. Fecha: new Date()</li>
+        <li>9. Función: function suma(a, b) { return a + b; }</li>
+        <li>10. Undefined: undefined</li>
+    </ul>
+    <label for="dato">Ingrese un dato:</label>
+    <input type="text" id="dato" placeholder="INGRESE UN DATO">
+    <button onclick="mostrarTipoDato()">Obtener tipo de dato</button>
+    <p id="resultadoTipoDato"></p>
+
+    <!-- EJERCICIO 13 -->
+    <p>/*EJERCICIO 13*/</p>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre"><br>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad1"><br>
+    <label for="sexo">Sexo (H/M/O):</label>
+    <input type="text" id="sexo"><br>
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso"><br>
+    <label for="altura">Altura (cm):</label>
+    <input type="number" id="altura"><br>
+    <button onclick="mostrarPropiedadesPersona()">Mostrar propiedades del objeto persona</button>
+    <pre id="resultadoPersona"></pre>
+
+    <!-- EJERCICIO 14 -->
+    <p>/*EJERCICIO 14*/</p>
+    <label for="isbn">ISBN:</label>
+    <input type="text" id="isbn"><br>
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo"><br>
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor"><br>
+    <label for="numPaginas">Número de páginas:</label>
+    <input type="number" id="numPaginas"><br>
+    <button onclick="cargarYMostrarLibro()">Cargar y mostrar información del libro</button>
+    <pre id="resultadoLibro"></pre>
+
+    <!-- EJERCICIO 15 -->
+    <p>/*EJERCICIO 15*/</p>
+    <label for="radio15">Ingrese el radio del círculo:</label>
+    <input type="number" id="radio15">
+    <button onclick="calcularYMostrarResultados()">Calcular</button>
+    <p id="area15"></p>
+    <p id="perimetro15"></p>
+
+    <!-- EJERCICIO 16 -->
+    <p>/*EJERCICIO 16*/</p>
+    <button onclick="rellenarYMostrarVectores()">Rellenar y Mostrar Vectores</button>
+    <pre id="resultado16"></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/Scripts/EjerciciosJS.js"></script>
+</body>
+
+
+
+</html>

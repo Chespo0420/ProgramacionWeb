@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+    <link rel="stylesheet" href="/Styles/Index.css">
+    <link rel="stylesheet" href="/Styles/Tabla.css">
+    <link rel="stylesheet" href="/Styles/Modal.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/Pags/Index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/Pags/Listas.html">Listas</a>
+                </li>
+                <li>
+                    <a href="/Pags/Tablas.html">Tablas</a>
+                </li>
+                <li>
+                    <a href="/Pags/Formulario.html">Formulario</a>
+                </li>
+                <li>
+                    <a href="/Pags/ejercicios.html">Ejercicios</a>
+                </li>
+                <li>
+                    <a href="/Pags/EjerciciosJS.html">Ejercicios JS</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Ejemplo de Tabla en HTML</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo electrónico</th>
+                    <th>Edad</th>
+                    <th>Género</th>
+                    <th>Mensaje</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Aquí se generarán las filas dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Editar Formulario</h2>
+            <form id="modal-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required>
+
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required>
+                    <option value="" disabled selected>--Selecciona--</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
+    </div>
+
+    <script src="/Scripts/Tabla.js"></script>
+</body>
+
+</html>
