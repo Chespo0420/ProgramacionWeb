@@ -365,7 +365,7 @@ function calcularYMostrarResultados() {
   document.getElementById("perimetro15").textContent = `Perímetro del círculo: ${perimetro.toFixed(2)}`;
 }
 
-//-------EJERCICIO 16-------//
+//-------EJERCICIO 16-------
 function generarNumeroAleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -376,9 +376,94 @@ function rellenarYMostrarVectores() {
     vector1.push(generarNumeroAleatorio(1, 100));
     vector2.push(generarNumeroAleatorio(1, 100));
   }
-  const resultado = document.getElementById("resultado16");
-  resultado.textContent = `Vector 1: [${vector1.join(", ")}]\nVector 2: [${vector2.join(", ")}]`;
+  const resultado16 = document.getElementById("resultado16");
+  resultado16.textContent = `Vector 1: [${vector1.join(", ")}]\nVector 2: [${vector2.join(", ")}]`;
+  vector1Global = vector1;
+  vector2Global = vector2;
+}
+let vector1Global = [];
+let vector2Global = [];
+
+//-------EJERCICIO 17-------
+function eliminarDosUltimosElementos(vector) {
+  vector.splice(-2);
+}
+function eliminarDosUltimosElementosYMostrar() {
+  eliminarDosUltimosElementos(vector1Global);
+  eliminarDosUltimosElementos(vector2Global);
+
+  mostrarVectorEnPre(vector1Global, "resultado17");
+  mostrarVectorEnPre(vector2Global, "resultado18");
+}
+function mostrarVectorEnPre(vector, resultadoId) {
+  const resultado = document.getElementById(resultadoId);
+
+  if (resultadoId === "resultado17") {
+    resultado.textContent = `Vector 1: [${vector.join(", ")}]`;
+  } else if (resultadoId === "resultado18") {
+    resultado.textContent = `Vector 2: [${vector.join(", ")}]`;
+  }
 }
 
+//-------EJERCICIO 18-------
+function compararTextos() {
+  var valores = [true, 5, false, "hola", "adios", 2];
+  var texto1 = valores[3];
+  var texto2 = valores[4];
+  var textoMayor = (texto1.length > texto2.length) ? texto1 : texto2;
+  var resultadoTexto = `El texto más largo es: "${textoMayor}"`;
+  mostrarResultado("resultado18a", resultadoTexto);
+}
+function operadoresBooleanos() {
+  var valores = [true, 5, false, "hola", "adios", 2];
+  var valorBooleano1 = valores[0];
+  var valorBooleano2 = valores[2];
+  var resultadoTrue = valorBooleano1 || valorBooleano2;
+  var resultadoFalse = valorBooleano1 && valorBooleano2;
+  var resultadoOperadores = `Resultado True: ${resultadoTrue}, Resultado False: ${resultadoFalse}`;
+  mostrarResultado("resultado18b", resultadoOperadores);
+}
+function operacionesMatematicas() {
+  var valores = [true, 5, false, "hola", "adios", 2];
+  var numero1 = valores[1];
+  var numero2 = valores[5];
+  var suma = numero1 + numero2;
+  var resta = numero1 - numero2;
+  var multiplicacion = numero1 * numero2;
+  var division = numero1 / numero2;
+  var potencia = numero1 ** numero2;
+  var resultadoOperaciones = `Suma: ${suma}, Resta: ${resta}, Multiplicación: ${multiplicacion}, División: ${division}, Potencia'2: ${potencia}`;
+  mostrarResultado("resultado18c", resultadoOperaciones);
+}
+function mostrarResultado(resultadoId, mensaje) {
+  const resultado = document.getElementById(resultadoId);
+  resultado.textContent = mensaje;
+}
 
+/*EJERCICIO 19*/
 
+let arregloA = [];
+let arregloB = [];
+function generarArregloA() {
+  arregloA = [];
+  for (let i = 0; i < 50; i++) {
+    arregloA.push((Math.random() * 100).toFixed(2));
+  }
+  mostrarArregloA();
+}
+function ordenarYCombinarArreglos() {
+  arregloA.sort((a, b) => a - b);
+  arregloB = arregloA.slice(0, 10);
+  for (let i = 0; i < 10; i++) {
+    arregloB.push(0.5);
+  }
+  mostrarArreglosOrdenados();
+}
+function mostrarArregloA() {
+  const resultadoA = document.getElementById("resultadoA");
+  resultadoA.textContent = `Arreglo A: [${arregloA.join(", ")}]`;
+}
+function mostrarArreglosOrdenados() {
+  const resultadoB = document.getElementById("resultadoB");
+  resultadoB.textContent = `Arreglo A Ordenado: [${arregloA.join(", ")}]\nArreglo B Combinado: [${arregloB.join(", ")}]`;
+}
