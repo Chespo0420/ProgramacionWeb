@@ -225,13 +225,71 @@
     <pre id="resultadoB"></pre>
 
 
+    <!-- EJERCICIO 20 -->
+    <p>/*EJERCICIO 20*/</p>
+    <button onclick="obtenerArrayModificado()">Obtener Arrays</button>
+    <p id="resultadoOriginal"></p>
+    <p id="resultadoModificado"></p>
+
+    <!-- Ejercicio 20 -->
+    <p>/*EJERCICIO 20 Mathi*/</p>
+    <button onclick="ej20()">Mostrar matriz</button>
+    <pre id="matriz"></pre>
+    <pre id="matrizaarray"></pre>
 
 
+    <!-- EJERCICIO 21 -->
+    <p>/*EJERCICIO 21*/</p>
+    <form id="formularioPersona">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad"><br>
+        <label for="sexo">Sexo (H/M/O):</label>
+        <input type="text" id="sexo" name="sexo"><br>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" step="0.01" id="peso" name="peso"><br>
+        <label for="altura">Altura (m):</label>
+        <input type="number" step="0.01" id="altura" name="altura"><br>
+        <button type="submit">Obtener Propiedades</button>
+    </form>
+    <pre id="resultado21"></pre>
+
+    <!-- EJERCICIO 22 -->
+    <p>/*EJERCICIO 22*/</p>
+    <label for="mensaje">Mensaje:</label>
+    <input type="text" id="mensaje">
+    <button onclick="mostrarMensaje()">Mostrar Mensaje</button>
+
+    <!-- EJERCICIO 23 -->
+    <p>/*EJERCICIO 23*/</p>
+    <form onsubmit="return false;">
+        <label for="inputTexto">Ingresa un texto:</label>
+        <textarea id="inputTexto" rows="4" cols="50"></textarea><br>
+        <button type="button" onclick="resaltarTexto()">Resaltar Texto</button>
+    </form>
+    <p>TEXTO DE EJEMPLO:</p>
+    <p id="textoresaltado"></p>
+
+    <!-- EJERCICIO 24 -->
+    <p>/*EJERCICIO 24*/</p>
+    <form onsubmit="return false;">
+        <label for="radio24">Radio:</label>
+        <input type="number" step="0.01" id="radio24">
+        <button type="button" onclick="calcularCirculo()">Calcular</button>
+    </form>
+    <p id="resultadoArea24"></p>
+    <p id="resultadoPerimetro24"></p>
 
 
-
-
-
+    <!-- EJERCICIO 25 -->
+    <p>/*EJERCICIO 25*/</p>
+    <form id="form1" onsubmit="getFormValores(); return false;">
+        Nombre: <input type="text" name="nombre" value="David"><br>
+        Apellido: <input type="text" name="apellido" value="Beckham"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="nombreApellido"></p>
 
 
 

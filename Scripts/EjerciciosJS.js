@@ -441,7 +441,6 @@ function mostrarResultado(resultadoId, mensaje) {
 }
 
 /*EJERCICIO 19*/
-
 let arregloA = [];
 let arregloB = [];
 function generarArregloA() {
@@ -466,4 +465,105 @@ function mostrarArregloA() {
 function mostrarArreglosOrdenados() {
   const resultadoB = document.getElementById("resultadoB");
   resultadoB.textContent = `Arreglo A Ordenado: [${arregloA.join(", ")}]\nArreglo B Combinado: [${arregloB.join(", ")}]`;
+}
+
+//-------EJERCICIO 20-------
+function obtenerArrayModificado() {
+  const matrizOriginal = [[3], [6], [9], [12], [15]];
+  const arrayModificado = [];
+  for (let i = 0; i < matrizOriginal.length; i++) {
+    arrayModificado.push(matrizOriginal[i][0] + 3);
+  }
+  const resultadoOriginal = document.getElementById("resultadoOriginal");
+  const resultadoModificado = document.getElementById("resultadoModificado");
+  resultadoOriginal.textContent = `Matriz Original: [${matrizOriginal.map(arr => arr[0]).join(", ")}]`;
+  resultadoModificado.textContent = `Array Modificado: [${arrayModificado.join(", ")}]`;
+}
+//ej20 mathias
+function ej20() {
+  const matrizz = document.getElementById("matriz");
+  const matrizAArray = document.getElementById("matrizaarray");
+  var matriz = [[3], [6], [9], [12], [15]]
+
+  matrizz.textContent = "la matriz original es : " + JSON.stringify(matriz, null);
+
+
+  matrizAArray.textContent = "pasado a array es : " + JSON.stringify(matriz.flat(), null);
+
+
+}
+
+//-------EJERCICIO 21-------
+document.getElementById("formularioPersona").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const propiedades = [];
+  for (const [key, value] of formData) {
+    if (value.trim() === "") {
+      propiedades.push(`${key}: Sin valor`);
+    } else {
+      propiedades.push(`${key}: ${value}`);
+    }
+  }
+  const resultado = document.getElementById("resultado21");
+  resultado.textContent = `Propiedades de la Persona: [${propiedades.join(", ")}]`;
+});
+
+//-------EJERCICIO 22-------
+function mostrarMensaje() {
+  const mensaje = document.getElementById("mensaje").value;
+  if (mensaje.trim() !== "") {
+    alert(mensaje);
+  } else {
+    alert("Por favor, ingresa un mensaje antes de mostrarlo.");
+  }
+}
+
+//-------EJERCICIO 23-------
+document.addEventListener("DOMContentLoaded", function () {
+  resaltarTextoEjemplo();
+});
+
+function resaltarTextoEjemplo() {
+  const textoEjemplo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut tortor leo.";
+  const palabrasEjemplo = textoEjemplo.split(/\s+/); // Utilizamos una expresión regular para dividir por espacios y eliminar saltos de línea
+  const palabrasResaltadasEjemplo = palabrasEjemplo.map(palabra =>
+    palabra.length >= 8 ? `<span class="resaltado">${palabra}</span>` : palabra
+  );
+  document.getElementById("textoresaltado").innerHTML = palabrasResaltadasEjemplo.join(" ");
+}
+
+function resaltarTexto() {
+  const inputTexto = document.getElementById("inputTexto").value;
+  const textoLimpio = inputTexto.replace(/\n/g, " "); // Reemplazamos saltos de línea por espacios
+  const palabras = textoLimpio.split(/\s+/); // Utilizamos una expresión regular para dividir por espacios y eliminar saltos de línea
+  const palabrasResaltadas = palabras.map(palabra =>
+    palabra.length >= 8 ? `<span class="resaltado">${palabra}</span>` : palabra
+  );
+  document.getElementById("textoresaltado").innerHTML = palabrasResaltadas.join(" ");
+}
+
+
+//-------EJERCICIO 24-------
+function calcularCirculo() {
+  const radio = parseFloat(document.getElementById("radio24").value);
+
+  const area = Math.PI * radio * radio;
+  const perimetro = 2 * Math.PI * radio;
+
+  const resultadoArea = document.getElementById("resultadoArea24");
+  const resultadoPerimetro = document.getElementById("resultadoPerimetro24");
+
+  resultadoArea.textContent = `Área del círculo: ${area.toFixed(2)}`;
+  resultadoPerimetro.textContent = `Perímetro del círculo: ${perimetro.toFixed(2)}`;
+}
+
+//-------EJERCICIO 25-------
+function getFormValores() {
+  const nombre = document.forms["form1"]["nombre"].value;
+  const apellido = document.forms["form1"]["apellido"].value;
+
+  const mensaje = `Nombre: ${nombre}, Apellido: ${apellido}`;
+  const mensajeFormulario = document.getElementById("nombreApellido");
+  mensajeFormulario.textContent = mensaje;
 }
