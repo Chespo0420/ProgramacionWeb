@@ -206,6 +206,14 @@
     <button onclick="eliminarDosUltimosElementosYMostrar()">Eliminar Últimos 2 Elementos</button>
     <pre id="resultado17"></pre>
     <pre id="resultado18"></pre>
+    <!-- EJERCICIO 17 B-->
+    <p>/*EJERCICIO 17B*/</p>
+    <label for="inputValor">Ingrese un valor:</label>
+    <input type="number" id="inputValor" onkeydown="agregarValorConEnter(event)">
+    <button onclick="agregarValor()">Agregar al vector</button>
+    <button onclick="eliminarUltimosDos()">Eliminar últimos 2</button>
+
+    <p>Vector: <span id="vector"></span></p>
 
     <!-- EJERCICIO 18 -->
     <p>/*EJERCICIO 18*/</p>
@@ -293,16 +301,63 @@
 
 
 
+    <!--  ---------EJERCICIO EXTRA 1 --------------->
+    <p>------------/*EJERCICIO EXTRA 1-----------*/</p>
+    <form onkeydown="return event.key != 'Enter';">
+        <label for="numeros">Ingrese una lista de números separados por comas:</label>
+        <input type="text" id="numeros" placeholder="Ejemplo: 5, 8, 3, 12">
+        <button type="button" onclick="encontrarMayorMenor()">Encontrar Mayor y Menor</button>
+    </form>
+    <p id="resultadoExtra1"></p>
+
+    <!-- EJERCICIO EXTRA 2 -->
+    <p>/*EJERCICIO EXTRA 2*/</p>
+    <form onkeydown="return event.key != 'Enter';">
+        <label for="frase">Ingrese una frase:</label>
+        <input type="text" id="frase">
+        <button type="button" onclick="contarVocales()">Contar Vocales</button>
+    </form>
+    <p id="resultadoExtra2"></p>
 
 
+    <!-- Ejercicio EXTRA 3 -->
+    <p>/*EJERCICIO EXTRA 3*/</p>
+    <label for="numerosInput">Ingrese números separados por coma:</label>
+    <input type="text" id="numerosInput">
+    <button onclick="calcularSuma()">Calcular Suma</button>
+    <p id="resultadoSuma"></p>
 
 
+    <!-- Ejercicio EXTRA 4 -->
+    <p>/*EJERCICIO EXTRA 4*/</p>
+    <label for="numeroInput">Ingrese un número entero:</label>
+    <input type="number" id="numeroInput">
+    <button onclick="mostrarNumerosPrimos()">Mostrar Números Primos</button>
+    <p id="resultadoPrimos"></p>
+
+    <!-- EJERCICIO EXTRA 5 -->
+    <p>/*EJERCICIO EXTRA 5*/</p>
+    <form>
+        <label for="numeroPrimo">Ingresa un número:</label>
+        <input type="number" id="numeroPrimo">
+        <button type="button" onclick="verificarPrimo()">Verificar Primo</button>
+    </form>
+    <p id="resultadoPrimoDistinto"></p>
+
+    <!-- EJERCICIO EXTRA 6 -->
+    <p>/*EJERCICIO EXTRA 6*/</p>
+    <label for="cantidadFibonacci">Cantidad:</label>
+    <input type="number" id="cantidadFibonacci">
+    <button onclick="calcularFibonacci(document.getElementById('cantidadFibonacci').value)">Mostrar Fibonacci</button>
+    <p id="resultadoFibonacci"></p>
 
 
-
-
-
-
+    <!-- EJERCICIO EXTRA 7 -->
+    <p>/*EJERCICIO EXTRA 7*/</p>
+    <label for="numerosInput">Ingresar números separados por comas:</label>
+    <input type="text" id="numerosInputExtra7">
+    <button onclick="ordenarNumerosExtra7()">Ordenar Ascendente</button>
+    <p id="resultadoOrdenadoExtra7"></p>
 
 
 

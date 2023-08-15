@@ -404,7 +404,34 @@ function mostrarVectorEnPre(vector, resultadoId) {
     resultado.textContent = `Vector 2: [${vector.join(", ")}]`;
   }
 }
+//-------------------17B------------
+const vector = [];
+const vectorSpan = document.getElementById("vector");
+const inputValor = document.getElementById("inputValor");
 
+function agregarValor() {
+  const valor = parseFloat(inputValor.value);
+  if (!isNaN(valor)) {
+    vector.push(valor);
+    actualizarVector();
+    inputValor.value = "";
+  }
+}
+function agregarValorConEnter(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    agregarValor();
+  }
+}
+function eliminarUltimosDos() {
+  if (vector.length >= 2) {
+    vector.splice(-2);
+    actualizarVector();
+  }
+}
+function actualizarVector() {
+  vectorSpan.textContent = `[${vector.join(", ")}]`;
+}
 //-------EJERCICIO 18-------
 function compararTextos() {
   var valores = [true, 5, false, "hola", "adios", 2];
@@ -566,4 +593,133 @@ function getFormValores() {
   const mensaje = `Nombre: ${nombre}, Apellido: ${apellido}`;
   const mensajeFormulario = document.getElementById("nombreApellido");
   mensajeFormulario.textContent = mensaje;
+}
+
+//---------------------EXTRASSSSS-----------------
+//EJERCICIO EXTRA 1 :
+function encontrarMayorMenor() {
+  const inputNumeros = document.getElementById("numeros").value;
+  const numeros = inputNumeros.split(",").map(Number);
+  if (numeros.length === 0) {
+    document.getElementById("resultadoExtra1").textContent = "Por favor, ingrese al menos un número.";
+    return;
+  }
+  const mayor = Math.max(...numeros);
+  const menor = Math.min(...numeros);
+  document.getElementById("resultadoExtra1").textContent = `El mayor número es ${mayor} y el menor número es ${menor}.`;
+}
+
+//-------EJERCICIO EXTRA 2-------
+
+function contarVocales() {
+  const frase = document.getElementById("frase").value.toLowerCase();
+  const vocales = "aeiouáéíóú";
+  const contadorVocales = {};
+
+  for (let i = 0; i < frase.length; i++) {
+    if (vocales.includes(frase[i])) {
+      if (contadorVocales[frase[i]]) {
+        contadorVocales[frase[i]]++;
+      } else {
+        contadorVocales[frase[i]] = 1;
+      }
+    }
+  }
+
+  let resultado = "Cantidad de cada vocal:\n";
+  for (const vocal in contadorVocales) {
+    resultado += `${vocal}: ${contadorVocales[vocal]}\n`;
+  }
+
+  document.getElementById("resultadoExtra2").textContent = resultado;
+}
+//-------EJERCICIO EXTRA 3-------
+function calcularSuma() {
+  const numerosInput = document.getElementById("numerosInput").value;
+  const numerosArray = numerosInput.split(",").map(num => parseFloat(num.trim()));
+
+  const suma = numerosArray.reduce((total, num) => total + num, 0);
+
+  const resultadoSuma = document.getElementById("resultadoSuma");
+  resultadoSuma.textContent = `La suma de los números es: ${suma}`;
+}
+
+//-------EJERCICIO EXTRA 4-------
+function mostrarNumerosPrimos() {
+  const numeroInput = parseInt(document.getElementById("numeroInput").value);
+
+  const numerosPrimos = [];
+  for (let i = 2; i <= numeroInput; i++) {
+    if (esPrimo(i)) {
+      numerosPrimos.push(i);
+    }
+  }
+
+  const resultadoPrimos = document.getElementById("resultadoPrimos");
+  resultadoPrimos.textContent = `Números primos menores o iguales a ${numeroInput}: ${numerosPrimos.join(", ")}`;
+}
+
+function esPrimo(num) {
+  if (num <= 1) {
+    return false;
+  }
+  if (num <= 3) {
+    return true;
+  }
+  if (num % 2 === 0 || num % 3 === 0) {
+    return false;
+  }
+  let i = 5;
+  while (i * i <= num) {
+    if (num % i === 0 || num % (i + 2) === 0) {
+      return false;
+    }
+    i += 6;
+  }
+  return true;
+}
+//-------EJERCICIO EXTRA 5-------
+function esPrimo(numero) {
+  if (numero <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function verificarPrimo() {
+  const numero = parseInt(document.getElementById("numeroPrimo").value);
+  const resultado = esPrimo(numero) ? "Es primo" : "No es primo";
+  document.getElementById("resultadoPrimoDistinto").textContent = resultado;
+}
+
+//-------EJERCICIO EXTRA 6-------
+function calcularFibonacci(cantidad) {
+  const resultadoFibonacci = document.getElementById("resultadoFibonacci");
+  resultadoFibonacci.textContent = "Serie de Fibonacci: ";
+
+  let num1 = 0, num2 = 1;
+
+  for (let i = 0; i < cantidad; i++) {
+    resultadoFibonacci.textContent += num1 + " ";
+
+    const siguienteNum = num1 + num2;
+    num1 = num2;
+    num2 = siguienteNum;
+  }
+}
+
+//-------EJERCICIO EXTRA 7-------
+
+function ordenarNumerosExtra7() {
+  const numerosInput = document.getElementById("numerosInputExtra7").value;
+  const numerosArray = numerosInput.split(",").map(Number);
+
+  const numerosOrdenados = numerosArray.slice().sort((a, b) => a - b);
+
+  document.getElementById("resultadoOrdenadoExtra7").textContent = `Arreglo Ordenado: [${numerosOrdenados.join(", ")}]`;
 }
